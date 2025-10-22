@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Development - CodeSphere</title>
+<style>
+:root{
+  --bg:#071029; --card:#0f1724; --accent:#00d2ff; --accent2:#6a5cff; --txt:#e6f0ff;
+}
+body{margin:0;font-family:Inter,system-ui,Arial;color:var(--txt);background:var(--bg);padding-bottom:60px;}
+a{color:inherit;text-decoration:none;}
+header{padding:18px 28px;background:linear-gradient(90deg, rgba(10,20,40,0.55), rgba(5,10,20,0.4));border-bottom:1px solid rgba(255,255,255,0.03);}
+header h1{margin:0;color:var(--accent);}
+.wrap{max-width:1000px;margin:28px auto;padding:0 18px;}
+h2,h3{color:var(--accent2);}
+.card{background:var(--card);padding:18px;border-radius:12px;margin-bottom:20px;}
+button{cursor:pointer;border:none;padding:10px 14px;margin:4px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#02112a;font-weight:600;}
+.pill{display:inline-flex;align-items:center;gap:6px;margin:4px;}
+.icon-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;}
+ul{margin:6px 0 0 18px;}
+.action{background:#222;color:var(--accent2);}
+.action:hover{background:var(--accent);}
+</style>
+</head>
+<body>
+
+<header><h1>Web Development</h1></header>
+<main class="wrap">
+  <div class="card">
+    <h2>Frontend, Backend & Full Stack</h2>
+    <p>Web development is the practice of building websites and web apps using HTML, CSS, JavaScript and server-side technologies.</p>
+  </div>
+
+  <div class="card" id="tools-panel">
+    <h3>Tools & Technologies</h3>
+    <div class="icon-row">
+      <button class="pill" onclick="showToolCourse('React')">React</button>
+      <button class="pill" onclick="showToolCourse('Node')">Node.js</button>
+      <button class="pill" onclick="showToolCourse('MongoDB')">MongoDB</button>
+      <button class="pill" onclick="showToolCourse('Git')">Git</button>
+    </div>
+    <p style="margin-top:12px">Click a tool to view its core concepts.</p>
+  </div>
+
+  <div id="tool-course"></div>
+
+  <div class="card">
+    <h3>Related Jobs</h3>
+    <ul>
+      <li>Frontend Developer</li>
+      <li>Backend Developer</li>
+      <li>Full Stack Developer</li>
+      <li>Web Designer</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+function showToolCourse(tool){
+  const box = document.getElementById('tool-course');
+  let html = '';
+  switch(tool){
+    case 'React':
+      html = `<h3>React Core Concepts</h3>
+      <ul>
+        <li>JSX — HTML in JavaScript</li>
+        <li>Components — building blocks of UI</li>
+        <li>Props & State — data management</li>
+        <li>Hooks — useState, useEffect, custom hooks</li>
+        <li>Routing — React Router</li>
+        <li>Context API — global state management</li>
+      </ul>`;
+      break;
+    case 'Node':
+      html = `<h3>Node.js Core Concepts</h3>
+      <ul>
+        <li>Modules & require/import</li>
+        <li>Event-driven architecture</li>
+        <li>HTTP & Express framework</li>
+        <li>File System & streams</li>
+        <li>Async programming & Promises</li>
+        <li>APIs & REST</li>
+      </ul>`;
+      break;
+    case 'MongoDB':
+      html = `<h3>MongoDB Core Concepts</h3>
+      <ul>
+        <li>Collections & Documents</li>
+        <li>CRUD operations</li>
+        <li>Indexes & Aggregation</li>
+        <li>Relationships & References</li>
+        <li>Schema Design</li>
+        <li>Replication & Sharding</li>
+      </ul>`;
+      break;
+    case 'Git':
+      html = `<h3>Git Core Concepts</h3>
+      <ul>
+        <li>Repositories & Commits</li>
+        <li>Branches & Merging</li>
+        <li>Cloning & Pull/Push</li>
+        <li>Staging & Working Directory</li>
+        <li>Conflict resolution</li>
+        <li>Collaboration workflows (GitFlow)</li>
+      </ul>`;
+      break;
+  }
+  html += `<button class="action" onclick="backToTools()">← Back to Tools</button>`;
+  box.innerHTML = html;
+}
+function backToTools(){document.getElementById('tool-course').innerHTML='';}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CodeSphere - Domains (Neon Dark)</title>
+<style>
+:root{
+  --bg-1:#071029; --bg-2:#0b1220; --accent:#00d2ff; --accent-2:#6a5cff; --card:#0f1724; --txt:#e6f0ff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:Inter,system-ui,Arial; color:var(--txt);
+  background: linear-gradient(135deg,var(--bg-1), #071534 50%, var(--bg-2));
+  min-height:100vh; padding-bottom:60px;
+}
+header{
+  display:flex; align-items:center; justify-content:space-between; padding:18px 28px; gap:12px;
+  background: linear-gradient(90deg, rgba(10,20,40,0.55), rgba(5,10,20,0.4));
+  border-bottom: 1px solid rgba(255,255,255,0.03); position:sticky; top:0; z-index:20;
+  backdrop-filter: blur(6px);
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .dot{width:42px;height:42px;border-radius:10px;
+  background: linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;font-weight:700;color:#02122a}
+h1{font-size:1.2rem;margin:0;letter-spacing:0.6px}
+p.sub{margin:0;font-size:0.86rem;color:rgba(230,240,255,0.6)}
+
+.wrap{max-width:1100px;margin:28px auto;padding:0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03); padding:20px; border-radius:14px; text-align:center;
+  transition:transform .22s ease, box-shadow .22s ease; box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+.card:hover{transform:translateY(-8px); box-shadow: 0 22px 40px rgba(0,0,0,0.6)}
+.card img{width:72px;filter: drop-shadow(0 6px 14px rgba(0,210,255,0.06));}
+.card h3{margin:10px 0;color:var(--accent-2)}
+.card p{margin:0;color:rgba(230,240,255,0.75);font-size:0.92rem}
+
+.btn{
+  margin-top:14px;padding:10px 14px;border-radius:10px;border:none;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#02112a;font-weight:600;cursor:pointer;letter-spacing:0.4px;
+}
+.hero{
+  margin:28px 0 18px;padding:18px;border-radius:12px;
+  background: linear-gradient(90deg, rgba(0,210,255,0.04), rgba(106,92,255,0.03));
+  border:1px solid rgba(255,255,255,0.02);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.hero-left{max-width:72%}
+.hero h2{margin:0;color:var(--accent);font-size:1.1rem}
+.hero p{margin:6px 0 0;color:rgba(230,240,255,0.75)}
+
+footer{max-width:1100px;margin:28px auto;padding:18px;color:rgba(230,240,255,0.5);text-align:center;font-size:0.9rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <div class="dot">CS</div>
+    <div>
+      <h1>CodeSphere</h1>
+      <p class="sub">Programming Domains — Neon Dark Edition</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="hero-left">
+      <h2>Explore domains — click Learn More to open a detailed page</h2>
+      <p>Each domain page includes Tools and Related Jobs sections (click buttons on that page).</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png" alt="web">
+      <h3>Web Development</h3>
+      <p>Frontend, backend and full-stack web technologies.</p>
+      <div><a href="webdev.html"><button class="btn">Learn More</button></a></div>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" alt="ml">
+      <h3>Machine Learning</h3>
+      <p>Modeling, data pipelines and predictive systems.</p>
+      <div><a href="ml.html"><button class="btn">Learn More</button></a></div>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919828.png" alt="ai">
+      <h3>Artificial Intelligence</h3>
+      <p>Intelligent systems, NLP, vision and reasoning.</p>
+      <div><a href="ai.html"><button class="btn">Learn More</button></a></div>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919831.png" alt="cloud">
+      <h3>Cloud Computing</h3>
+      <p>Cloud platforms, infra, services and deployment.</p>
+      <div><a href="cloud.html"><button class="btn">Learn More</button></a></div>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919834.png" alt="devops">
+      <h3>DevOps</h3>
+      <p>CI/CD, automation, containers and reliability.</p>
+      <div><a href="devops.html"><button class="btn">Learn More</button></a></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Built for final lab — neon dark theme • Save all files in same folder and open index.html
+</footer>
+</body>
+</html>
+
+
+
+

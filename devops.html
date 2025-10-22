@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DevOps - CodeSphere</title>
+<style>
+:root{--bg:#071029;--card:#0f1724;--accent:#00d2ff;--accent2:#6a5cff;--txt:#e6f0ff;}
+body{margin:0;font-family:Inter,system-ui,Arial;color:var(--txt);background:var(--bg);padding-bottom:60px;}
+header{padding:18px 28px;background:linear-gradient(90deg, rgba(10,20,40,0.55), rgba(5,10,20,0.4));border-bottom:1px solid rgba(255,255,255,0.03);}
+header h1{margin:0;color:var(--accent);}
+.wrap{max-width:1000px;margin:28px auto;padding:0 18px;}
+.card{background:var(--card);padding:18px;border-radius:12px;margin-bottom:20px;}
+button{cursor:pointer;border:none;padding:10px 14px;margin:4px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#02112a;font-weight:600;}
+.pill{display:inline-flex;align-items:center;gap:6px;margin:4px;}
+.icon-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;}
+ul{margin:6px 0 0 18px;}
+.action{background:#222;color:var(--accent2);}
+.action:hover{background:var(--accent);}
+</style>
+</head>
+<body>
+<header><h1>DevOps</h1></header>
+<main class="wrap">
+  <div class="card">
+    <h2>DevOps Overview</h2>
+    <p>DevOps combines software development and IT operations for faster deployment and automation.</p>
+  </div>
+
+  <div class="card" id="tools-panel">
+    <h3>Tools & Technologies</h3>
+    <div class="icon-row">
+      <button class="pill" onclick="showToolCourse('Docker')">Docker</button>
+      <button class="pill" onclick="showToolCourse('Jenkins')">Jenkins</button>
+      <button class="pill" onclick="showToolCourse('Kubernetes')">Kubernetes</button>
+      <button class="pill" onclick="showToolCourse('Git')">Git</button>
+    </div>
+    <p style="margin-top:12px">Click a tool to view its core concepts.</p>
+  </div>
+  <div id="tool-course"></div>
+
+  <div class="card">
+    <h3>Related Jobs</h3>
+    <ul>
+      <li>DevOps Engineer</li>
+      <li>CI/CD Specialist</li>
+      <li>Automation Engineer</li>
+      <li>Site Reliability Engineer</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+function showToolCourse(tool){
+  const box=document.getElementById('tool-course');
+  let html='';
+  switch(tool){
+    case 'Docker': html=`<h3>Docker Core Concepts</h3><ul><li>Images & Containers</li><li>Dockerfile & Build</li><li>Volumes & Networking</li><li>Compose & Services</li><li>Deployment & Best Practices</li></ul>`;break;
+    case 'Jenkins': html=`<h3>Jenkins Core Concepts</h3><ul><li>Pipelines & Jobs</li><li>Build Automation</li><li>Plugins & Extensibility</li><li>CI/CD Integration</li><li>Monitoring & Reporting</li></ul>`;break;
+    case 'Kubernetes': html=`<h3>Kubernetes Core Concepts</h3><ul><li>Pods, Nodes & Clusters</li><li>Services & Ingress</li><li>Deployments & Scaling</li><li>ConfigMaps & Secrets</li><li>Helm Charts</li></ul>`;break;
+    case 'Git': html=`<h3>Git Core Concepts</h3><ul><li>Repositories & Commits</li><li>Branches & Merging</li><li>Cloning & Pull/Push</li><li>Staging & Working Directory</li><li>Conflict resolution</li></ul>`;break;
+  }
+  html+=`<button class="action" onclick="backToTools()">← Back to Tools</button>`;
+  box.innerHTML=html;
+}
+function backToTools(){document.getElementById('tool-course').innerHTML='';}
+</script>
+</body>
+</html>

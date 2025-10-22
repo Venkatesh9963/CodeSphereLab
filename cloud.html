@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloud Computing - CodeSphere</title>
+<style>
+:root{--bg:#071029;--card:#0f1724;--accent:#00d2ff;--accent2:#6a5cff;--txt:#e6f0ff;}
+body{margin:0;font-family:Inter,system-ui,Arial;color:var(--txt);background:var(--bg);padding-bottom:60px;}
+header{padding:18px 28px;background:linear-gradient(90deg, rgba(10,20,40,0.55), rgba(5,10,20,0.4));border-bottom:1px solid rgba(255,255,255,0.03);}
+header h1{margin:0;color:var(--accent);}
+.wrap{max-width:1000px;margin:28px auto;padding:0 18px;}
+.card{background:var(--card);padding:18px;border-radius:12px;margin-bottom:20px;}
+button{cursor:pointer;border:none;padding:10px 14px;margin:4px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#02112a;font-weight:600;}
+.pill{display:inline-flex;align-items:center;gap:6px;margin:4px;}
+.icon-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;}
+ul{margin:6px 0 0 18px;}
+.action{background:#222;color:var(--accent2);}
+.action:hover{background:var(--accent);}
+</style>
+</head>
+<body>
+<header><h1>Cloud Computing</h1></header>
+<main class="wrap">
+  <div class="card">
+    <h2>Cloud Overview</h2>
+    <p>Cloud Computing is delivering computing services over the internet including servers, storage, and networking.</p>
+  </div>
+
+  <div class="card" id="tools-panel">
+    <h3>Tools & Technologies</h3>
+    <div class="icon-row">
+      <button class="pill" onclick="showToolCourse('AWS')">AWS</button>
+      <button class="pill" onclick="showToolCourse('Azure')">Azure</button>
+      <button class="pill" onclick="showToolCourse('GCP')">GCP</button>
+      <button class="pill" onclick="showToolCourse('Docker')">Docker</button>
+    </div>
+    <p style="margin-top:12px">Click a tool to view its core concepts.</p>
+  </div>
+  <div id="tool-course"></div>
+
+  <div class="card">
+    <h3>Related Jobs</h3>
+    <ul>
+      <li>Cloud Engineer</li>
+      <li>Cloud Architect</li>
+      <li>DevOps Engineer</li>
+      <li>Site Reliability Engineer</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+function showToolCourse(tool){
+  const box=document.getElementById('tool-course');
+  let html='';
+  switch(tool){
+    case 'AWS': html=`<h3>AWS Core Concepts</h3><ul><li>EC2 & S3</li><li>Lambda & Serverless</li><li>IAM & Security</li><li>RDS & Databases</li><li>Deployment & Scaling</li></ul>`;break;
+    case 'Azure': html=`<h3>Azure Core Concepts</h3><ul><li>VMs & Storage</li><li>Functions & App Services</li><li>Identity & Security</li><li>Databases & Networking</li><li>Monitoring & Scaling</li></ul>`;break;
+    case 'GCP': html=`<h3>GCP Core Concepts</h3><ul><li>Compute Engine & Storage</li><li>App Engine & Cloud Functions</li><li>IAM & Security</li><li>BigQuery & Databases</li><li>Scaling & Deployment</li></ul>`;break;
+    case 'Docker': html=`<h3>Docker Core Concepts</h3><ul><li>Images & Containers</li><li>Dockerfile & Build</li><li>Volumes & Networking</li><li>Compose & Services</li><li>Deployment & Best Practices</li></ul>`;break;
+  }
+  html+=`<button class="action" onclick="backToTools()">← Back to Tools</button>`;
+  box.innerHTML=html;
+}
+function backToTools(){document.getElementById('tool-course').innerHTML='';}
+</script>
+</body>
+</html>
